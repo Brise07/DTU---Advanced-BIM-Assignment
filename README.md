@@ -15,6 +15,8 @@ In our script we used the IFC-Beams as well as IFC-Columns concepts and the prop
 
 Before our use case can start the IFC model needs to be modelled by the architect. The next use case would be the detailed FE analysis as well as the architect that are waiting for the changes or results of our use case. Between the architect and our use case it is an iterational process which makes the architect also waiting for our use case.
 
+![Diagram of BIM use case](diagram_columns_beams.svg)
+
 ## Python code for the beams
 The code is using the LLYN - STRU.ifc model (Skylab structural model). 
 
