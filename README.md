@@ -29,12 +29,12 @@ The architect can continue designing the building now having the right size and 
 
 This way the architect can have more accurate data about the structure faster than without this tool. This helps with the design because they will not need to make significant changes in the plan if in a later phase the structural engineer figures out that some columns or beams are not good enough. 
 
-![Diagram of BIM use case](A3_diagram.svg)
+![Diagram of BIM use case](A3/A3_diagram.svg)
 
 ## Information exchange
 The main delivery of information is in the start where the engineer gets the 3D-model (IFC) from the architect. For the tool to be able to work properly this model needs to be in LOD 300 as all beams and columns have to be represented as 3-dimensional shapes. 
 
-![Expected column detail at different LOGs ](LOD_columns.png)
+![Expected column detail at different LOGs ](A3/LOD_columns.png)
 
 Before performing the analysis the model is updated with all this information (cross-section data, load-data, support data), thus the model reaches LOD 350 before starting the structural analysis. 
 
