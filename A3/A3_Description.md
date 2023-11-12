@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Advanced BIM A2: OpenBIM Analysis</h1>
+<h1 style="text-align: center;">Advanced BIM A3: OpenBIM Analysis</h1>
 <h4 style="text-align: center;">
 Group 37    
 
