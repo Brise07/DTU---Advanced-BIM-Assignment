@@ -17,6 +17,13 @@ The packages that are written in the beginning of the code must be installed for
 ## Using the tool
 ![Flowchart explaining the stepst of using the tool](A4/BIM_A4_Flowchart.jpg)
 
+### Video tutorials
+
+- [Video Tutorial #1](https://youtu.be/-f-GhZUr8rw)
+
+- [Video Tutorial #2](https://youtu.be/n6Jy4n5D0Nw)
+
+- [Video Tutorial #3](https://youtu.be/Yd561s5rfrQ)
 
 # Explanation of python code
 
