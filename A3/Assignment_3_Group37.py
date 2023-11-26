@@ -11,7 +11,6 @@ import time
 import math
 import numpy as np
 
-from pathlib import Path
 
 from bokeh.models import ColumnDataSource, LabelSet
 from bokeh.plotting import figure, show
@@ -29,7 +28,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
+# Install the folowwing packages on your computer using the Command Prompt
 # pip install topologic
 # pip install topologicpy
 # pip install bokeh
@@ -54,6 +53,8 @@ while True:
                 "Please type columns or beams depending on what you want to investigate: "
             )
         )
+        if user_input not in ["columns", "beams"]:
+            raise ValueError
         print(f"Great Choice! Lets investigate some {user_input}.")
         break
     except ValueError:
@@ -445,9 +446,11 @@ if user_input == "columns":
             export_input = str(
                 input("Do you want to export the data to the IFC file ? (yes or no): ")
             )
+            if export_input.strip().lower() not in ["yes", "no"]:
+                raise ValueError()
             break
         except ValueError:
-            print("Invalid input. Please enter -yes- or -no-.")
+            print("Invalid input. Please enter yes or no.")
 
     if export_input == "yes":
         ifc_file = model
@@ -714,8 +717,15 @@ if user_input == "beams":
     print(f"\nThere are {number_of_beams} beams in the model.")
 
     total_beam_length = 0
+    while True:
+        try:
+            large_span_beam_min = float(input("Find beams longer than (in mm): "))
+            # if large_span_beam_min is not float:
+            # raise ValueError()
+            break
+        except ValueError:
+            print("Invalid input. Please type a number.")
 
-    large_span_beam_min = float(input("Find beams longer than (in mm): "))
     large_beams = 0
 
     print()
@@ -916,6 +926,8 @@ if user_input == "beams":
             export_input = str(
                 input("Do you want to export the data to the IFC file ? (yes or no): ")
             )
+            if export_input.strip().lower() not in ["yes", "no"]:
+                raise ValueError()
             break
         except ValueError:
             print("Invalid input. Please enter -yes- or -no-.")
@@ -954,8 +966,17 @@ if user_input == "beams":
 
     if export_input == "no":
         print("Model was not updated.")
-    print()
 
+    print("\nPossible Ids:")
+    print(
+        "\n".join(
+            [
+                str(int(key))
+                for key in beam_dictionary.keys()
+                if not "I-profil" in beam_dictionary[key]["Type"]
+            ][:10]
+        )
+    )
     # Choose a beam and get the data.
     beam_id = input(
         "Give the Tag-ID of the beam you would like the data of or type 'done' if you are done (Tag can be found in the model in Blender):  "
@@ -1004,7 +1025,7 @@ if user_input == "beams":
                         )
 
         except:
-            print("Not a valid ID!\n")
+            print("Try again :/")
         finally:
             beam_id = input(
                 "Give the Tag-ID of the beam you would like the data of or type 'done' if you are done (Tag can be found in the model in Blender): "
