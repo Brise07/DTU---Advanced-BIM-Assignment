@@ -15,7 +15,7 @@ The IFC4 model must be in the same folder as the code. The name of the IFC model
 The packages that are written in the beginning of the code must be installed for the code to run successfully.
 
 ## Using the tool
-![Flowchart explaining the stepst of using the tool](A4/BIM_A4_Flowchart.jpg)
+![Flowchart explaining the stepst of using the tool](BIM_A4_Flowchart.jpg)
 
 
 # Explanation of python code
